@@ -1,0 +1,49 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+
+h1 {
+    color: var(--main-blue);
+    font-size: 35px;
+}
+
+.game-desc {
+    margin: 30px 0;
+    font-size: 25px;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    color: var(--main-red);
+    text-align: center;
+}
+
+.game-desc p:first-child, p:last-child {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.game-desc p:last-child {
+    color: var(--main-blue);
+}
+
+.container button {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 15px;
+}

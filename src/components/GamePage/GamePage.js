@@ -1,9 +1,12 @@
 import React from 'react'
 import './GamePage.css'
 
+
 const GamePage = () => {
   return (
-    <div>GamePage</div>
+    <div>
+      
+    </div>
   )
 }
 
