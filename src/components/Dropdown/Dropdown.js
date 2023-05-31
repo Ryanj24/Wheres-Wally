@@ -5,10 +5,14 @@ import Wenda from '../../assets/Wenda.jpg'
 import Wizard from '../../assets/Wizard.jpg'
 import Odlaw from '../../assets/Odlaw.jpg'
 
-const Dropdown = () => {
+const Dropdown = ({ xPos, yPos }) => {
 
   return (
-    <div className='dropdown-menu'>
+    <div className='dropdown-menu' style={{
+      position: "absolute",
+      left: `${xPos}px`,
+      top: `${yPos}px`,
+    }}>
         <h3>Who did you find?</h3>
         <ul>
             <li><button><img src={Waldo} alt="Waldo"/>Waldo</button></li>
