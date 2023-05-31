@@ -21,7 +21,7 @@ const GameInstructions = () => {
         
         <p>Welcome to Where's Wally?</p>
 
-        <p>When the game begins, your task is simple! Find each of the following characters in each scene as quickly as possible!</p>
+        <p>When the game begins, your task is simple! In each of the locations shown, find Wally, Wizard and Odlaw as quickly as possible!</p>
 
         <p>Good Luck!</p>
         </span>

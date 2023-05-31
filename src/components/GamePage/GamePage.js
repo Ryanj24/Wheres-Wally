@@ -1,12 +1,13 @@
 import React from 'react'
 import './GamePage.css'
-
+import Navbar from '../Navbar/Navbar.js'
 
 const GamePage = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar />
+      <h1>Game Page</h1>
+    </>
   )
 }
 

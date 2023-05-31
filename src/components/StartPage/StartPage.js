@@ -15,7 +15,7 @@ const StartPage = () => {
   return (
     <div className='main-container' style={styles}>
         <img src={Logo} alt="Where's Wally Logo"/>
-        <button onClick={() => navigate('/GameInstructions')}>Start Game</button>
+        <button onClick={() => navigate('/GameInstructions')}>START GAME</button>
     </div>
   )
 }
