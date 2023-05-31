@@ -1,0 +1,36 @@
+.dropdown-menu {
+    background-color: rgba(44, 43, 43, 0.2);
+    height: 300px;
+    width: 250px;
+    margin: 30px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 15px;
+}
+
+.dropdown-menu h3 {
+    text-align: center;
+}
+
+
+li {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    list-style: none;
+}
+
+li > button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+}
+
+li img {
+    height: 100px;
+    width: 75px;
+    margin-right: 10px;
+}
