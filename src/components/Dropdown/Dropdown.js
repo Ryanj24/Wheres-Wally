@@ -5,7 +5,12 @@ import Wenda from '../../assets/Wenda.jpg'
 import Wizard from '../../assets/Wizard.jpg'
 import Odlaw from '../../assets/Odlaw.jpg'
 
-const Dropdown = ({ xPos, yPos }) => {
+const Dropdown = ({ xPos, yPos, setShowMenu }) => {
+
+  const handleSelection = (e) => {
+    console.log(e.target.value)
+    setShowMenu(false);
+  }
 
   return (
     <div className='dropdown-menu' style={{
@@ -15,10 +20,10 @@ const Dropdown = ({ xPos, yPos }) => {
     }}>
         <h3>Who did you find?</h3>
         <ul>
-            <li><button><img src={Waldo} alt="Waldo"/>Waldo</button></li>
-            <li><button><img src={Wenda} alt="Wenda"/>Wenda</button></li>
-            <li><button><img src={Wizard} alt="Whitebeard"/>Whitebeard</button></li>
-            <li><button><img src={Odlaw} alt="Odlaw"/>Odlaw</button></li>
+            <li><button onClick={(e) => handleSelection(e)} value="Waldo"><img src={Waldo} alt="Waldo"/>Waldo</button></li>
+            <li><button onClick={(e) => handleSelection(e)} value="Wenda"><img src={Wenda} alt="Wenda"/>Wenda</button></li>
+            <li><button onClick={(e) => handleSelection(e)} value="Whitebeard"><img src={Wizard} alt="Whitebeard"/>Whitebeard</button></li>
+            <li><button onClick={(e) => handleSelection(e)} value="Odlaw"><img src={Odlaw} alt="Odlaw"/>Odlaw</button></li>
         </ul>
     </div>
   )

@@ -13,17 +13,16 @@ const GamePage = () => {
 
   const handleClick = (e) => {
 
+    /*
     const container = document.querySelector(".location-container")
 
-    /* Position of image div from top and left of document
+     //Position of image div from top and left of document
     console.log(container.offsetTop)
-    console.log(container.offsetLeft)
-    
-    console.log(e.clientX);*/
+    console.log(container.offsetLeft)*/
 
     setShowMenu(prev => true);
-    setXPos(e.clientX);
-    setYPos(e.clientY);
+    setXPos(e.pageX);
+    setYPos(e.pageY);
 
     
   }
@@ -31,11 +30,15 @@ const GamePage = () => {
     <>
       {showMenu ? (
         <>
-        <Navbar />
-        <div className='location-container'>
-          <img src={Beach} alt="Beach scene" onClick={(e) => handleClick(e)}/>
-        </div>
-        <Dropdown xPos = {xPos} yPos = {yPos}/>
+          <Navbar />
+          <div className='location-container'>
+            <img src={Beach} alt="Beach scene" onClick={(e) => handleClick(e)}/>
+          </div>
+          <Dropdown 
+            xPos = {xPos}
+            yPos = {yPos}
+            setShowMenu = {setShowMenu}
+          />
         </>
       ) : (
         <>
