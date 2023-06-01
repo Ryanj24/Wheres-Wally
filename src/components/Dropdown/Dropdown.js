@@ -5,10 +5,25 @@ import Wenda from '../../assets/Wenda.jpg'
 import Wizard from '../../assets/Wizard.jpg'
 import Odlaw from '../../assets/Odlaw.jpg'
 
-const Dropdown = ({ xPos, yPos, setShowMenu }) => {
+const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
 
   const handleSelection = (e) => {
-    console.log(e.target.value)
+
+    let selectedCharacter = null;
+    let chars = [...characters];
+    
+    for (let i = 0; i < characters.length; i++) {
+      if (e.target.value === characters[i].name) {
+        selectedCharacter = characters[i]
+        selectedCharacter.found = true
+      }
+    }
+    
+    console.log(selectedCharacter.pos);
+    console.log(xPos);
+    console.log(yPos);
+
+
     setShowMenu(false);
   }
 
