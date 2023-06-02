@@ -13,11 +13,12 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
     const chars = [...characters];
 
     let result = chars.filter(character => character.name === selectedCharacter);
-    //console.log(result);
-
-    console.log(typeof(result[0].pos));
-    console.log([xPos, yPos]);
-
+    
+    if (xPos >= result[0].pos[0] - 10 && xPos <= result[0].pos[0] + 10 && yPos >= result[0].pos[1] - 10 && yPos <= result[0].pos[1] + 10) {
+      console.log(`You found ${selectedCharacter}!`);
+    } else {
+      console.log(`You didn't find ${selectedCharacter}`)
+    }
     
 
 
