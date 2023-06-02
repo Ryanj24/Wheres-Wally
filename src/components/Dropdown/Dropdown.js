@@ -9,19 +9,17 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
 
   const handleSelection = (e) => {
 
-    let selectedCharacter = null;
-    let chars = [...characters];
+    let selectedCharacter = e.target.value;
+    const chars = [...characters];
+
+    let result = chars.filter(character => character.name === selectedCharacter);
+    //console.log(result);
+
+    console.log(typeof(result[0].pos));
+    console.log([xPos, yPos]);
+
     
-    for (let i = 0; i < characters.length; i++) {
-      if (e.target.value === characters[i].name) {
-        selectedCharacter = characters[i]
-        selectedCharacter.found = true
-      }
-    }
-    
-    console.log(selectedCharacter.pos);
-    console.log(xPos);
-    console.log(yPos);
+
 
 
     setShowMenu(false);
@@ -30,10 +28,14 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
   return (
     <div className='dropdown-menu' style={{
       position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)"
+      /*
       left: `${xPos}px`,
-      top: `${yPos}px`,
+      top: `${yPos}px`,*/
     }}>
-        <h3>Who did you find?</h3>
+        <h3>Which character did you find?</h3>
         <ul>
             <li><button onClick={(e) => handleSelection(e)} value="Waldo"><img src={Waldo} alt="Waldo"/>Waldo</button></li>
             <li><button onClick={(e) => handleSelection(e)} value="Wenda"><img src={Wenda} alt="Wenda"/>Wenda</button></li>

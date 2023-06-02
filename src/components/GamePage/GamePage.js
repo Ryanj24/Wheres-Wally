@@ -28,7 +28,6 @@ const GamePage = () => {
     console.log(container.offsetTop)
     console.log(container.offsetLeft)*/
 
-    
     setShowMenu(prev => true);
     setXPos(e.clientX - e.target.getBoundingClientRect().left);
     setYPos(e.clientY - e.target.getBoundingClientRect().top);
@@ -44,16 +43,16 @@ const GamePage = () => {
       {showMenu ? (
         <>
           <Navbar />
-          <div className='location-container'>
+          <div className='location-container' style={{position: "relative"}}>
             <img src={Beach} alt="Beach scene" onClick={(e) => handleClick(e)}/>
-          </div>
-          <Dropdown 
+            <Dropdown 
             xPos = {xPos}
             yPos = {yPos}
             setShowMenu = {setShowMenu}
             characters = {characters}
             setCharacters = {setCharacters}
           />
+          </div>
         </>
       ) : (
         <>
