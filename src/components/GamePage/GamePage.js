@@ -21,20 +21,10 @@ const GamePage = () => {
 
   const handleClick = (e) => {
 
-    /*
-    const container = document.querySelector(".location-container")
-
-    Position of image div from top and left of document
-    console.log(container.offsetTop)
-    console.log(container.offsetLeft)*/
 
     setShowMenu(prev => true);
     setXPos(e.clientX - e.target.getBoundingClientRect().left);
     setYPos(e.clientY - e.target.getBoundingClientRect().top);
-
-    /*
-    console.log(`X: ${e.clientX - e.target.getBoundingClientRect().left}`);
-    console.log(`Y: ${e.clientY - e.target.getBoundingClientRect().top}`);*/
 
     
   }

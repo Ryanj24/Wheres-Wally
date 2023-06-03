@@ -11,10 +11,10 @@ const Navbar = () => {
     <header className='nav-container'>
       <img src={Logo} alt="Where's Wally Logo"/>
       <div className='characters'>
-        <img src={Waldo} alt="Waldo"/>
-        <img src={Wenda} alt="Wenda"/>
-        <img src={Wizard} alt="Wizard Whitebeard"/>
-        <img src={Odlaw} alt="Odlaw"/>
+        <img src={Waldo} alt="Waldo" className='nav-images'/>
+        <img src={Wenda} alt="Wenda" className='nav-images'/>
+        <img src={Wizard} alt="Wizard Whitebeard" className='nav-images'/>
+        <img src={Odlaw} alt="Odlaw" className='nav-images'/>
       </div>
       <div className='timer'>
         <h1>Time:</h1>

@@ -7,24 +7,29 @@ import Odlaw from '../../assets/Odlaw.jpg'
 
 const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
 
+
   const handleSelection = (e) => {
 
-    let selectedCharacter = e.target.value;
-    const chars = [...characters];
+    // Select all the character images from the navbar
+    const navImages = document.querySelectorAll('.nav-images');
 
-    let result = chars.filter(character => character.name === selectedCharacter);
-    
-    if (xPos >= result[0].pos[0] - 10 && xPos <= result[0].pos[0] + 10 && yPos >= result[0].pos[1] - 10 && yPos <= result[0].pos[1] + 10) {
-      console.log(`You found ${selectedCharacter}!`);
+    // Find the index of the selected character from the dropdown list
+    const index = [...e.target.parentElement.parentElement.children].indexOf(e.target.parentElement);
+
+    // Filter characters array to the selected character from the dropdown list
+    let result = characters.filter(character => character.name === e.target.value);
+
+
+    if (xPos >= result[0].pos[0] - 10 && xPos <= result[0].pos[0] + 10 && yPos >= result[0].pos[1] - 30 && yPos <= result[0].pos[1] + 30) {
+      console.log(`You found ${e.target.value}!`);
+      navImages[index].style.opacity = 0.3;
     } else {
-      console.log(`You didn't find ${selectedCharacter}`)
+      console.log(`You didn't find ${e.target.value}`)
     }
     
-
-
-
     setShowMenu(false);
   }
+
 
   return (
     <div className='dropdown-menu' style={{
@@ -32,9 +37,6 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)"
-      /*
-      left: `${xPos}px`,
-      top: `${yPos}px`,*/
     }}>
         <h3>Which character did you find?</h3>
         <ul>
