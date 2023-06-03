@@ -35,8 +35,10 @@ ul {
 li {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 20px 0;
     list-style: none;
+    padding: 20px;
 }
 
 li > button {
@@ -48,8 +50,8 @@ li > button {
     padding: 20px;
     width: 100%;
     border-radius: 20px;
-    background-color: #fff;
-    color: var(--main-blue);
+    background-color: var(--main-blue);
+    color: var(--main-red);
 }
 
 li > button:hover {
@@ -60,5 +62,5 @@ li > button:hover {
 li img {
     height: 100px;
     width: 75px;
-    margin-right: 10px;
+    margin-right: 15px;
 }

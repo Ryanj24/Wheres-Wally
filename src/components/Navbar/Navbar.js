@@ -1,10 +1,10 @@
 import React from 'react'
 import './Navbar.css'
 import Logo from '../../assets/logo.png'
-import Waldo from '../../assets/Waldo.jpg'
-import Wenda from '../../assets/Wenda.jpg'
-import Wizard from '../../assets/Wizard.jpg'
-import Odlaw from '../../assets/Odlaw.jpg'
+import Waldo from '../../assets/Waldo.png'
+import Wenda from '../../assets/Wenda.png'
+import Wizard from '../../assets/Wizard.png'
+import Odlaw from '../../assets/Odlaw.png'
 
 const Navbar = () => {
   return (
