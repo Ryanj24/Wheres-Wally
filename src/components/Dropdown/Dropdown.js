@@ -5,7 +5,7 @@ import Wenda from '../../assets/Wenda.png'
 import Wizard from '../../assets/Wizard.png'
 import Odlaw from '../../assets/Odlaw.png'
 
-const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, setLevel }) => {
+const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, level, setLevel }) => {
 
 
   const handleSelection = (e) => {
@@ -19,18 +19,36 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, setLevel
     // Filter characters array to the selected character from the dropdown list
     let result = characters.filter(obj => obj.name === e.target.value);
 
-
-    /*
-    if (xPos >= result[0].pos[0] - 10 && xPos <= result[0].pos[0] + 10 && yPos >= result[0].pos[1] - 30 && yPos <= result[0].pos[1] + 30) {
+    
+    if (foundCharacter(level, result, xPos, yPos)) {
       console.log(`You found ${e.target.value}!`);
       navImages[index].style.opacity = 0.3;
       characters[index].found = true;
       setCharacters(characters);
+
     } else {
       console.log(`You didn't find ${e.target.value}`)
     }
+
     
-    setShowMenu(false);*/
+    setShowMenu(false);
+  }
+
+
+  const foundCharacter = (level, result, xPos, yPos) => {
+    if (level.includes("Beach")) {
+      if (xPos >= result[0].beachXPosition - 10 && xPos <= result[0].beachXPosition + 10 && yPos >= result[0].beachYPosition - 30 && yPos <= result[0].beachYPosition + 30) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      if (xPos >= result[0].spaceXPosition - 10 && xPos <= result[0].spaceXPosition + 10 && yPos >= result[0].spaceYPosition - 30 && yPos <= result[0].spaceYPosition + 30) {
+        return true
+      } else {
+        return false
+      }
+    }
   }
 
 
