@@ -4,8 +4,10 @@ import Waldo from '../../assets/Waldo.png'
 import Wenda from '../../assets/Wenda.png'
 import Wizard from '../../assets/Wizard.png'
 import Odlaw from '../../assets/Odlaw.png'
+import { useEffect } from 'react'
+import Space from '../../assets/Space.jpg'
 
-const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
+const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, setLevel }) => {
 
 
   const handleSelection = (e) => {
@@ -19,21 +21,16 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters }) => {
     // Filter characters array to the selected character from the dropdown list
     let result = characters.filter(obj => obj.name === e.target.value);
 
-    console.log(characters[0].name);
-    console.log(e.target);
-    console.log(e.target.value);
 
-    /*
     if (xPos >= result[0].pos[0] - 10 && xPos <= result[0].pos[0] + 10 && yPos >= result[0].pos[1] - 30 && yPos <= result[0].pos[1] + 30) {
       console.log(`You found ${e.target.value}!`);
       navImages[index].style.opacity = 0.3;
       characters[index].found = true;
-      //console.log(characters);
       setCharacters(characters);
     } else {
       console.log(`You didn't find ${e.target.value}`)
     }
-    */
+    
     setShowMenu(false);
   }
 
