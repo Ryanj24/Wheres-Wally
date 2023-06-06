@@ -38,6 +38,7 @@ const GamePage = () => {
     if (level.includes("Beach") && characters.length !== 0 && characters.filter(character => character.found === false).length === 0) {
       setLevel(Space);
 
+      resetCharacters();
       // Select all the character images from the navbar
       const navImages = document.querySelectorAll('.nav-images');
       navImages.forEach(image => image.style.opacity = 1);
@@ -62,6 +63,13 @@ const GamePage = () => {
     setYPos(e.clientY - e.target.getBoundingClientRect().top);
   }
 
+  const resetCharacters = () => {
+    
+    const charactersCopy = characters.map(character => ({...character, found: false}));
+
+    setCharacters(charactersCopy);
+
+  }
 
   return (
     <>
