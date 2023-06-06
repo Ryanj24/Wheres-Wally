@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './GamePage.css'
 import Navbar from '../Navbar/Navbar.js'
 import Beach from '../../assets/Beach.jpg'
@@ -12,13 +12,21 @@ const GamePage = () => {
 
   const [characters, setCharacters] = useState([]);
 
+  const [showMenu, setShowMenu] = useState(false);
+  const [xPos, setXPos] = useState(0);
+  const [yPos, setYPos] = useState(0);
+  const [level, setLevel] = useState(Beach);
+
+  const [gameOver, setGameOver] = useState(false);
+
+
 
   useEffect(() => {
     const getCharacters = async () => {
       const data = await getDocs(collection(db, 'characters'));
       
       const responseData = data.docs.map(doc => ({...doc.data()}))
-      //console.log(responseData);
+
       setCharacters(responseData);
     }
 
@@ -33,6 +41,8 @@ const GamePage = () => {
       // Select all the character images from the navbar
       const navImages = document.querySelectorAll('.nav-images');
       navImages.forEach(image => image.style.opacity = 1);
+    } else if (level.includes("Space") && characters.filter(character => character.found === false).length === 0) {
+      setGameOver(true);
     }
   })
   
@@ -45,10 +55,6 @@ const GamePage = () => {
   ])*/
 
 
-  const [showMenu, setShowMenu] = useState(false);
-  const [xPos, setXPos] = useState(0);
-  const [yPos, setYPos] = useState(0);
-  const [level, setLevel] = useState(Beach);
 
   const handleClick = (e) => {
     setShowMenu(prev => true);
@@ -61,7 +67,9 @@ const GamePage = () => {
     <>
       {showMenu ? (
         <>
-          <Navbar />
+          <Navbar 
+            gameOver={gameOver}
+          />
           <div className='location-container' style={{position: "relative"}}>
             <img id="game-bg" src={level} alt="Beach scene" onClick={(e) => handleClick(e)}/>
             <Dropdown 
