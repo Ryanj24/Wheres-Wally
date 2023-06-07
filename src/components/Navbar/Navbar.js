@@ -16,7 +16,9 @@ const Navbar = ({ gameOver }) => {
 
   const startTimer = () => {
     timerID.current = setInterval(() => {
+
     setSeconds(prev => prev + 1);
+
     }, 1000)
   }
 
@@ -38,6 +40,13 @@ const Navbar = ({ gameOver }) => {
     }
 
   }, [gameOver])
+
+  useEffect(() => {
+    if (seconds === 60) {
+      setMinutes(prev => prev + 1);
+      setSeconds(0)
+    }
+  }, [seconds])
 
   return (
     <header className='nav-container'>
