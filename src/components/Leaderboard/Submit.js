@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Submit.css'
 
 const Submit = ({ minutes, seconds }) => {
 
-  const handleChange = (e) => {
+  const [playerName, setPlayerName] = useState("");
+  const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    setPlayerName(e.target.value);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
+    navigate("/Leaderboard");
   }
   return (
     <>
