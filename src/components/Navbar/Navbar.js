@@ -7,11 +7,13 @@ import Wizard from '../../assets/Wizard.png'
 import Odlaw from '../../assets/Odlaw.png'
 import Timer from '../Timer/Timer'
 
-const Navbar = ({ gameOver }) => {
+const Navbar = ({ gameOver, minutes, setMinutes, seconds, setSeconds }) => {
 
+  /*
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
+  */
   const timerID = useRef();
 
   const startTimer = () => {
@@ -26,6 +28,7 @@ const Navbar = ({ gameOver }) => {
     clearInterval(timerID.current);
     timerID.current = 0;
   }
+
 
   useEffect(() => {
     startTimer();

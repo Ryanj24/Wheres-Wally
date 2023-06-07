@@ -1,0 +1,66 @@
+.submit-score-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+}
+
+/*
+.submit-score-container.active {
+    opacity: 1;
+    pointer-events: all;
+}*/
+
+.submit-score-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    height: 400px;
+    width: 600px;
+    padding: 20px;
+}
+
+.submit-score-modal h3 {
+    margin: 20px 0;
+}
+
+.submit-score-modal .leaderboard-submission {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.submit-score-modal .leaderboard-submission > p{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.submit-score-modal #submitForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-score-modal #submitForm input[type="text"]{
+    padding: 10px 0 10px 15px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.submit-score-modal #submitForm input[type="submit"]{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 1px solid;
+}
+
+.submit-score-modal #submitForm input[type="submit"]:hover {
+    cursor: pointer;
+}

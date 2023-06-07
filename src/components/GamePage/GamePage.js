@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar.js'
 import Beach from '../../assets/Beach.jpg'
 import Space from '../../assets/Space.jpg'
 import Dropdown from '../Dropdown/Dropdown'
+import Submit from '../Leaderboard/Submit'
 import { db } from '../../config/firebase'
 import { getDocs, collection, doc } from 'firebase/firestore'
 
@@ -71,12 +72,20 @@ const GamePage = () => {
 
   }
 
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+
   return (
     <>
       {showMenu ? (
         <>
           <Navbar 
             gameOver={gameOver}
+            minutes={minutes}
+            setMinutes={setMinutes}
+            seconds={seconds}
+            setSeconds={setSeconds}
           />
           <div className='location-container' style={{position: "relative"}}>
             <img id="game-bg" src={level} alt="Beach scene" onClick={(e) => handleClick(e)}/>
@@ -93,9 +102,22 @@ const GamePage = () => {
         </>
       ) : (
         <>
-        <Navbar />
+        <Navbar 
+        gameOver={gameOver}
+        minutes={minutes}
+        setMinutes={setMinutes}
+        seconds={seconds}
+        setSeconds={setSeconds}
+        />
         <div className='location-container'>
           <img src={level} alt="Beach scene" onClick={(e) => handleClick(e)}/>
+        </div>
+        <div className='submit-score-container' style={{display: "none"}}>
+          <div className='submit-score-modal'>
+              <Submit 
+              minutes={minutes}
+              seconds={seconds}/>
+          </div>
         </div>
         </>
       )}
