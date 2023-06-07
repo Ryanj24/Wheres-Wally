@@ -2,6 +2,15 @@ import React from 'react'
 import './Submit.css'
 
 const Submit = ({ minutes, seconds }) => {
+
+  const handleChange = (e) => {
+
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+  }
   return (
     <>
         <h1>Game Over!</h1>
@@ -12,8 +21,8 @@ const Submit = ({ minutes, seconds }) => {
 
         <div className='leaderboard-submission'>
             <p>Enter your name below to add your time to the leaderboard</p>
-            <form id='submitForm'>
-                <input type="text" placeholder="Name..." />
+            <form id='submitForm' onSubmit={(e) => handleSubmit(e)}>
+                <input type="text" placeholder="Name..." onChange={(e) => handleChange(e)}/>
                 <input type="submit" value="Enter"/>
             </form>
         </div>
