@@ -8,14 +8,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: all;
+    pointer-events: none;
+    opacity: 0;
 }
 
-/*
+
 .submit-score-container.active {
     opacity: 1;
     pointer-events: all;
-}*/
+}
 
 .submit-score-modal {
     display: flex;

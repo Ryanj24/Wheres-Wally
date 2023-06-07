@@ -47,6 +47,12 @@ const GamePage = () => {
       setGameOver(true);
     }
   })
+
+  useEffect(() => {
+    if (gameOver) {
+      document.querySelector('.submit-score-container').classList.add("active");
+    }
+  }, [gameOver])
   
   /*
   const [characters, setCharacters] = useState([
@@ -112,7 +118,7 @@ const GamePage = () => {
         <div className='location-container'>
           <img src={level} alt="Beach scene" onClick={(e) => handleClick(e)}/>
         </div>
-        <div className='submit-score-container' style={{display: "none"}}>
+        <div className='submit-score-container'>
           <div className='submit-score-modal'>
               <Submit 
               minutes={minutes}
