@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Submit.css'
@@ -13,8 +14,21 @@ const Submit = ({ minutes, seconds }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    addToLeaderboard();
     navigate("/Leaderboard");
+  }
+
+  const addToLeaderboard = async () => {
+    try {
+      await addDoc(collection(getFirestore(), "leaderboard"), {
+        name: playerName,
+        minutes: minutes,
+        seconds: seconds
+      })
+    }
+    catch(error) {
+      console.error("Failed to add to leaderboard")
+    }
   }
   return (
     <>
