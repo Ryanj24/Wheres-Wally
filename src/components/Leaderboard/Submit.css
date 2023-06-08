@@ -26,10 +26,12 @@
     height: 400px;
     width: 600px;
     padding: 20px;
+    border-radius: 15px;
 }
 
 .submit-score-modal h3 {
     margin: 20px 0;
+    color: var(--main-red);
 }
 
 .submit-score-modal .leaderboard-submission {
@@ -41,18 +43,24 @@
     font-size: 20px;
     text-align: center;
     margin-bottom: 15px;
+    color: var(--main-red);
 }
 
 .submit-score-modal #submitForm {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
 
 .submit-score-modal #submitForm input[type="text"]{
     padding: 10px 0 10px 15px;
     font-size: 20px;
     margin-right: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(245, 245, 245, 0.801);
+    box-shadow: -2px 5px 7px 0px var(--main-blue);
 }
 
 .submit-score-modal #submitForm input[type="submit"]{

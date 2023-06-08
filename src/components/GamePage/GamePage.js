@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import './GamePage.css'
 import Navbar from '../Navbar/Navbar.js'
 import Beach from '../../assets/Beach.jpg'
@@ -6,7 +6,7 @@ import Space from '../../assets/Space.jpg'
 import Dropdown from '../Dropdown/Dropdown'
 import Submit from '../Leaderboard/Submit'
 import { db } from '../../config/firebase'
-import { getDocs, collection, doc } from 'firebase/firestore'
+import { getDocs, collection } from 'firebase/firestore'
 
 
 const GamePage = () => {
@@ -54,15 +54,6 @@ const GamePage = () => {
     }
   }, [gameOver])
   
-  /*
-  const [characters, setCharacters] = useState([
-    {name: "Waldo", pos: [1189, 432], found: false},
-    {name: "Wenda", pos: [1485, 472], found: false},
-    {name: "Whitebeard", pos: [518, 403], found: false},
-    {name: "Odlaw", pos: [209, 406], found: false},
-  ])*/
-
-
 
   const handleClick = (e) => {
     setShowMenu(prev => true);

@@ -5,7 +5,7 @@ import Wenda from '../../assets/Wenda.png'
 import Wizard from '../../assets/Wizard.png'
 import Odlaw from '../../assets/Odlaw.png'
 
-const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, level, setLevel }) => {
+const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, level }) => {
 
 
   const handleSelection = (e) => {
@@ -21,13 +21,9 @@ const Dropdown = ({ xPos, yPos, setShowMenu, characters, setCharacters, level, s
 
     
     if (foundCharacter(level, result, xPos, yPos)) {
-      console.log(`You found ${e.target.value}!`);
       navImages[index].style.opacity = 0.3;
       characters[index].found = true;
       setCharacters(characters);
-
-    } else {
-      console.log(`You didn't find ${e.target.value}`)
     }
 
     

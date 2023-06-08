@@ -39,9 +39,9 @@ const Submit = ({ minutes, seconds }) => {
         <h1>{minutes}:{seconds <= 9 ? `0${seconds}` : seconds}</h1>
 
         <div className='leaderboard-submission'>
-            <p>Enter your name below to add your time to the leaderboard</p>
+            <p>Add your time to the leaderboard!</p>
             <form id='submitForm' onSubmit={(e) => handleSubmit(e)}>
-                <input type="text" placeholder="Name..." onChange={(e) => handleChange(e)}/>
+                <input type="text" placeholder="Enter your name..." onChange={(e) => handleChange(e)}/>
                 <input type="submit" value="Enter"/>
             </form>
         </div>

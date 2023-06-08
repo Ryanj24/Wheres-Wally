@@ -3,13 +3,15 @@ import './Leaderboard.css'
 import background from '../../assets/bg.jpg'
 import Logo from '../../assets/logo.png'
 import Entry from './Entry'
-import { collection, getDoc, getDocs, setIndexConfiguration } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../config/firebase'
+import { useNavigate } from 'react-router-dom'
 
 const Leaderboard = () => {
 
   const [entries, setEntries] = useState([]);
-  const [counter, setCounter] = useState(0);
+
+  const navigate = useNavigate();
 
   const styles = {
     backgroundImage: `url(${background})`,
@@ -26,6 +28,10 @@ const Leaderboard = () => {
 
     getEntries();
   }, [])
+
+  const playAgain = () => {
+    navigate('/')
+  }
   return (
     <div className='leaderboard-container' style={styles}>
       <div className='leaderboard'>
@@ -44,6 +50,9 @@ const Leaderboard = () => {
               />
             )}
           </div>
+      </div>
+      <div className='playAgain-container'>
+          <button id='playAgain' onClick={playAgain}>Play Again</button>
       </div>
     </div>
   )

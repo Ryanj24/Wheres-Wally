@@ -34,3 +34,13 @@
     font-size: 40px;
     margin-left: 15px;
 }
+
+.leaderboard-container .playAgain-container {
+    margin-top: 30px;
+}
+
+.leaderboard-container .playAgain-container button {
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 15px;
+}
